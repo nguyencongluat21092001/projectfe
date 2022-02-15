@@ -1,0 +1,15 @@
+.form-create {
+  margin: 20px 0;
+  border: 1px solid red;
+  width: 60%;
+  place-items: center;
+  margin: auto;
+}
+.center-x {
+  width: 100vw;
+  display: flex;
+  justify-items: center;
+}
+.form-create form {
+  padding: 20px;
+}

@@ -1,0 +1,61 @@
+
+<app-add-edit-stu></app-add-edit-stu>
+<div style="width: 60%;">
+  <app-add-edit-stu [student]="student" [modelcss]='modelcss' *ngIf="activateAddEditStuCom">
+  </app-add-edit-stu>
+</div>
+<div class="row">
+  <div *ngFor="let s of studentList">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name Trainer</th>
+          <th scope="col">Adress</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{s.StudentId}}</th>
+          <td>{{s.FullName}}</td>
+          <td>{{s.Class}}</td>
+          <td><button (click)='showEdit(s)' class="btn btn-primary">Edit</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="deleteClick(s)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div id="modelcss" class='d-none' tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Trainer</h5>
+            <button (click)="closeEdit()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+           <form >
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name Trainer</label>
+              <input type="text" [(ngModel)]='FullName' name="FullName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Adress</label>
+              <input [(ngModel)]='Class' type="text" name="Class" class="form-control" id="exampleInputPassword1">
+            </div>
+           </form>
+          </div>
+          <div class="modal-footer">
+            <button (click)="closeEdit()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button (click)="EditStudent()" type="button" class="btn btn-success me-3">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

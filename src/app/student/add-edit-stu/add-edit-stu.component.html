@@ -1,0 +1,45 @@
+
+<div class="center-x">
+  <div class="form-create">
+    <form >
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name Trainer</label>
+        <input type="text" [(ngModel)]='FullName' name="FullName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Adress</label>
+        <input [(ngModel)]='Class' type="text" name="Class" class="form-control" id="exampleInputPassword1">
+      </div>
+
+      <button (click)="addStudent()" *ngIf="student.StudentId==0" class="btn btn-success me-3">
+        Add
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Full Name</th>
+        <th>Class</th>
+        <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of studentList">
+      <td>{{dataItem.StudentId}}</td>
+      <td>{{dataItem.FullName}}</td>
+      <td>{{dataItem.Class}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="EditStudent(dataItem)">Edit</button>
+          <button type="button" class="btn btn-primary" (click)="deleteClick(dataItem)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
